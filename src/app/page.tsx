@@ -25,7 +25,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gray-600 opacity-50" />
           <div className=" absolute bottom-0 left-0 w-full md:bottom-36  text-white p-8  flex items-center justify-center" >
             <div className="md:w-[40rem] md:mr-48">
-              <h1 className="text-white text-4xl md:text-5xl font-bold tracking-[.0.3em] mb-4">
+              <h1 className="text-white text-4xl md:text-5xl font-bold  mb-4">
                 O futuro da sua empresa <br /> é na <span className="underline decoration-blue-600" >Logos!</span>
               </h1>
               <p className="text-white font-normal mb-4 md:text-lg">
