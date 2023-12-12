@@ -1,113 +1,226 @@
-import Image from 'next/image'
-
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import vibingPic from '../../public/vibing.jpg';
+import vrPic from '../../public/vr.jpg';
+import workingPic from '../../public/working.jpg';
+import techPic from '../../public/tech.jpg';
+import chessPic from '../../public/chess.jpg';
+import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
+import { News, Service, metrics, news, services } from "@/source";
+import { redirect } from "next/navigation";
+import { cn } from "@/lib/utils";
 export default function Home() {
+
+  const isOdd = (index: number): string | undefined => { if (index % 2 == 0) { return "md:order-2" } }
+
+  const leatestNews = news.slice(-2)
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      {/* PRIMEIRA PARTE */}
+      <div id="primeira parte" >
+        <div className=" relative h-[40rem] overflow-hidden">
+          <video className="w-full h-full object-cover " playsInline autoPlay muted loop src="video.mp4" />
+          <div className="absolute inset-0 bg-gray-600 opacity-50" />
+          <div className=" absolute bottom-0 left-0 w-full md:bottom-36  text-white p-8  flex items-center justify-center" >
+            <div className="md:w-[40rem] md:mr-48">
+              <h1 className="text-white text-4xl md:text-5xl font-bold tracking-[.0.3em] mb-4">
+                O futuro da sua empresa <br /> é na <span className="underline decoration-blue-600" >Logos!</span>
+              </h1>
+              <p className="text-white font-normal mb-4 md:text-lg">
+                A logos é uma empresa lider na consultoria Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+              </p>
+              <Button variant={'secondary'} className='text-blue-800 font-semibold text-sm mt-1'>Quero ser cliente!</Button>
+
+            </div>
+
+          </div>
         </div>
-      </div>
+      </div >
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      {/* SEGUNDA PARTE */}
+      <div id="segunda parte" className="md:container" >
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+        {services.length > 0 &&
+          services.map(({ content, link, title, subtitle }: Service, index: number) => (
+            <div key={index} className="flex justify-center items-center flex-col my-6 mx-3 md:flex-row " >
+              <Image
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+                className={cn(
+                  "md:w-1/2",
+                  isOdd(index),
+                )}
+                src={vibingPic}
+                alt="Mulher escutando musica e daçando"
+              />
+              <div className="mt-4 md:w-1/2 md:p-7" >
+                <h2 className="text-slate-500 font-semibold my-1 md:text-1xl " >{subtitle.toUpperCase()}</h2>
+                <h1 className="text-slate-700 font-bold text-2xl md:text-4xl md:my-3  ">{title}</h1>
+                <p className="text-slate-500 md:text-2xl " >{content}</p>
+                <div className="flex flex-col md:flex-row  md:mt-3" >
+                  <Button asChild className=" w-[100%] md:w-[30%] mt-3 h-12 text-xl md:mr-5"   >
+                    <Link href={`/services/${link}`}>Saiba mais!</Link>
+                  </Button>
+                  <Button variant={"outline"} className="border-blue-600 w-[100%] md:w-[30%] mt-3 h-12 text-xl text-blue-600" >Quero aderir</Button>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+        {/* 
+        <div className="flex justify-center items-center flex-col my-6 mx-3 md:flex-row " >
+          <Image
+            className="md:w-1/2 md:order-2"
+            src={vibingPic}
+            alt="Mulher escutando musica e daçando"
+          />
+          <div className="mt-4 md:w-1/2 md:p-7" >
+
+            <h2 className="text-slate-500 font-semibold my-1 md:text-1xl " >SOLUCOES DE MARKETING</h2>
+
+            <h1 className="text-slate-700 font-bold text-2xl md:text-4xl md:my-3  ">Com uma estrategia simples e eficaz para alavancar suas vendas</h1>
+            <p className="text-slate-500 md:text-2xl " >Com nossa estrategia de marketing  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+              molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum </p>
+
+            <div className="flex flex-col md:flex-row  md:mt-3" >
+              <Button className=" w-[100%] md:w-[30%] mt-3 h-12 text-xl md:mr-5" >Saiba mais!</Button>
+              <Button variant={"outline"} className="border-blue-600 w-[100%] md:w-[30%] mt-3 h-12 text-xl text-blue-600" >Quero aderir</Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex  justify-center items-center flex-col my-6 mx-3 md:flex-row " >
+
+          <Image
+            className="md:w-1/2"
+            src={vrPic}
+            alt="Mulher escutando musica e daçando"
+          />
+          <div className="mt-4 md:w-1/2 md:p-7" >
+
+            <h2 className="text-slate-500 font-semibold my-1 md:text-1xl " >SOLUCOES DE MARKETING</h2>
+
+            <h1 className="text-slate-700 font-bold text-2xl md:text-4xl md:my-3 ">Com uma estrategia simples e eficaz para alavancar suas vendas</h1>
+            <p className="text-slate-500 md:text-2xl " >Com nossa estrategia de marketing  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+              molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum </p>
+
+            <div className="flex flex-col md:flex-row md:mt-3 " >
+              <Button className=" w-[100%] md:w-[30%] mt-3 h-12 text-xl md:mr-5" >Saiba mais!</Button>
+              <Button variant={"outline"} className="border-blue-600 w-[100%] md:w-[30%] mt-3 h-12 text-xl text-blue-600" >Quero aderir</Button>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center items-center flex-col my-6 mx-3 md:flex-row " >
+          <Image
+            className="md:w-1/2 md:order-2"
+            src={workingPic}
+            alt=" "
+          />
+          <div className="mt-4 md:w-1/2 md:p-7" >
+
+            <h2 className="text-slate-500 font-semibold my-1 md:text-1xl " >SOLUCOES DE MARKETING</h2>
+
+            <h1 className="text-slate-700 font-bold text-2xl md:text-4xl md:my-3">Com uma estrategia simples e eficaz para alavancar suas vendas</h1>
+            <p className="text-slate-500 md:text-2xl " >Com nossa estrategia de marketing  Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+              molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum </p>
+
+            <div className="flex flex-col md:flex-row md:mt-3 " >
+              <Button className=" w-[100%] md:w-[30%] mt-3 h-12 text-xl md:mr-5" >Saiba mais!</Button>
+              <Button variant={"outline"} className="border-blue-600 w-[100%] md:w-[30%] mt-3 h-12 text-xl text-blue-600" >Quero aderir</Button>
+            </div>
+          </div>
+        </div> */}
+
+      </div >
+
+
+
+
+
+      {/* TERCEIRA PARTE */}
+      <div id="terceira parte" className="my-7 mx-3 md:container " >
+
+        <div className="flex items-end justify-between " >
+          <h1 className="text-slate-700 font-bold text-3xl ">Ultimas noticias</h1>
+          <Link href={'/news'} className="text-slate-700 font-semiboldbold cursor-pointer " >Ver tudo →</Link>
+        </div>
+        <Separator className="mt-2" />
+
+        <div className="flex flex-col md:flex-row" >
+          {leatestNews.length > 0 &&
+            leatestNews.map(({ link, title, releaseDate }: News, index: number) => (
+              <Link key={index} href={`/news/${link}`} className="flex cursor-pointer flex-col my-6 mx-3 " >
+                <Image
+                  src={techPic}
+                  alt="Mulher escutando musica e daçando"
+                />
+                <div className="mt-4" >
+                  <h2 className="text-slate-500 font-semibold my-1 text-sm" >{releaseDate}</h2>
+                  <h1 className="text-slate-700 font-bold text-2xl ">{title}</h1>
+                </div>
+              </Link>
+            ))}
+
+          {/* <a className="flex cursor-pointer  justify-center items-center flex-col my-6 mx-3 " >
+            <Image
+              src={techPic}
+              alt="Mulher escutando musica e daçando"
+            />
+            <div className="mt-4" >
+              <h2 className="text-slate-500 font-semibold my-1 text-sm" >27 dezembro 1999</h2>
+              <h1 className="text-slate-700 font-bold text-2xl ">Como o uso da tecnologia nas nossas consultorias aumentaram os resultados</h1>
+            </div>
+          </a>
+
+          <a className="flex cursor-pointer  justify-center items-center flex-col my-6 mx-3 " >
+            <Image
+              src={chessPic}
+              alt="Mulher escutando musica e daçando"
+            />
+            <div className="mt-4" >
+              <h2 className="text-slate-500 font-semibold my-1 text-sm" >01 dezembro 2021</h2>
+              <h1 className="text-slate-700 font-bold text-2xl ">Empresas contrataram 32% vezes consultoria nos ultimos 3 anos</h1>
+            </div>
+          </a> */}
+        </div>
+
+      </div >
+
+      {/* QUARTA PARTE */}
+      < div id="quarta parte" className="my-7 mx-3 md:container" >
+
+        <div className="flex items-end justify-between " >
+          <h1 className="text-slate-700 font-bold text-3xl ">Nossos resultados</h1>
+        </div>
+        <Separator className="mt-2" />
+
+        <div className="flex flex-col md:flex-row " >
+          <div className="my-2 md:mx-5 " >
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-600" >R$ {metrics.clientRevenue}</h1>
+            <h2 className="font-semibold" >Faturamento dos clientes</h2>
+          </div>
+
+          <div className="my-2  md:mx-5" >
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-600" >+{metrics.growthPercentage}%</h1>
+            <h2 className="font-semibold" >Porcentagem de crescimento</h2>
+          </div>
+
+          < div className="my-2  md:mx-5" >
+            <h1 className="text-4xl md:text-5xl font-bold text-blue-600" >{metrics.peopleImpacted}</h1>
+            <h2 className="font-semibold" >Pessoas impactadas</h2>
+          </div>
+        </div>
+
+      </div >
+
+
+
+
+    </>
+  );
 }
