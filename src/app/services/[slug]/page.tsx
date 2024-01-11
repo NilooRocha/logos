@@ -2,7 +2,8 @@ import { Service, ServiceAdvantage, services } from "@/source";
 import Navigation, { NavigationProps } from "@/components/Navigation";
 import { redirect } from "next/navigation";
 import { Separator } from "@/components/ui/separator";
-import { CalendarClock } from "lucide-react";
+import { LucideIcon } from "lucide-react";
+import Icon from "@/components/ui/icon";
 
 
 export default function Service({ params }: { params: { slug: string } }) {
@@ -31,6 +32,12 @@ export default function Service({ params }: { params: { slug: string } }) {
             <p className="md:text-2xl text-xl text-slate-700 font-light  md:mx-32 mx-6 my-5" >
                 {selectedService?.content}
             </p>
+            {selectedService?.contentExtra &&
+                <p className="md:text-2xl text-xl text-slate-700 font-light  md:mx-32 mx-6 my-5" >
+                    {selectedService?.contentExtra}
+                </p>
+            }
+
 
 
             <h1 className="text-slate-700 font-bold text-3xl ml-2 ">Vantagens</h1>
@@ -41,9 +48,9 @@ export default function Service({ params }: { params: { slug: string } }) {
 
 
                 {selectedService.advantage.length > 0 &&
-                    selectedService.advantage.map(({ content, title }: ServiceAdvantage, index: number) => (
+                    selectedService.advantage.map(({ content, title, icon }: ServiceAdvantage, index: number) => (
                         <div key={index} className="w-80 h-96  shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] m-2" >
-                            <CalendarClock size={60} className="text-blue-600 my-5 ml-7 font-light " />
+                            <Icon name={icon} size={60} className="text-blue-600 my-5 ml-7 font-light" />
                             <h1 className="text-2xl text-slate-800 font-bold ml-6 mb-3" >{title}</h1>
                             <p className="text-slate-700 font-light text-lg mx-6" >{content}</p>
 

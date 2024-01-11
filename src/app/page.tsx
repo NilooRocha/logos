@@ -29,8 +29,8 @@ export default function Home() {
                 O futuro da sua empresa <br /> é na <span className="underline decoration-blue-600" >Logos!</span>
               </h1>
               <p className="text-white font-normal mb-4 md:text-lg">
-                A logos é uma empresa lider na consultoria Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                Nossa consultoria é feita <span className="underline decoration-blue-600" >sob medida</span> se adequando às particularidades de cada negócio, sempre com aderência à cultura organizacional.
+                Nossa equipe conta com experiência em multinacionais e áreas estratégicas, vivência no exterior e bom network.
               </p>
               <Button variant={'secondary'} className='text-blue-800 font-semibold text-sm mt-1'>Quero ser cliente!</Button>
 
